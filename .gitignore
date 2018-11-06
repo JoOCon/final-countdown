@@ -2,6 +2,9 @@
 node_modules
 /dist
 
+#key
+apiKey.js
+
 # local env files
 .env.local
 .env.*.local
