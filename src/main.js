@@ -4,6 +4,7 @@ import { apiKey } from './apiKey.js';
 Vue.config.productionTip = false
 
 new Vue({
+<<<<<<< HEAD
   el: '#app',
   data: {
     astroData: 'show this info'
@@ -14,3 +15,7 @@ new Vue({
       .then(data => this.astroData = data);
   }
 })
+=======
+  render: h => h(App)
+}).$mount('#app')
+>>>>>>> 365e2b713bbeeef231de53d5f87e4652af0a2791
