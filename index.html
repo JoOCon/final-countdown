@@ -10,8 +10,12 @@
 </head>
 <body>
   <h1>Final Countdown</h1>
-  <div id='app'>{{ astroData }}</div>
-
+  <div id='app'>
+    <h2>{{ astroData.title }}</h2>
+    <h3>{{ astroData.date }}</h3>
+    <img v-bind:src="astroData.url">
+    <p>{{ astroData.explanation }}</p>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
