@@ -1,8 +1,16 @@
 import Vue from 'vue'
-import App from './App.vue'
+import { apiKey } from './apiKey.js';
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  data: {
+    astroData: 'show this info'
+  },
+  mounted() {
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
+      .then(response => response.json())
+      .then(data => this.astroData = data);
+  }
+})
