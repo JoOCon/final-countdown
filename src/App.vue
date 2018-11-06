@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Testing App Display"/>
+    <h1>{{astroData.title}}</h1>
+    <h3>{{astroData.date}}</h3>
+    <img v-bind:src="astroData.url"/>
+    <p>{{astroData.explanation}}</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { apiKey } from '../apiKey.js';
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      astroData: null
+    }
+  },
+  created() {
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
+      .then(response => response.json())
+      .then(data => this.astroData = data);
   }
 }
 </script>
