@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <h1>Final Countdown</h1>
-    <h1>{{astroData.title}}</h1>
-    <h3>{{astroData.date}}</h3>
-    <img v-bind:src="astroData.url"/>
-    <p>{{astroData.explanation}}</p>
-    <button v-on:click="oldData()">Yesturdays Info</button>
-    <button v-on:click="currentData()">Current Info</button>
+    <div class="main-container">
+      <div class='left-container'>
+        <button v-on:click="oldData()">Yesturdays Info</button>
+        <button v-on:click="currentData()">Current Info</button>
+        <h1>{{astroData.title}}</h1>
+        <h3>{{astroData.date}}</h3>
+        <p>{{astroData.explanation}}</p>
+      </div>
+      <img class='main-image' v-bind:src="astroData.url"/>
+    </div>
   </div>
 </template>
 
@@ -45,12 +48,40 @@ export default {
 </script>
 
 <style>
+button {
+  padding: .3em .7em;
+  font-size: 1em;
+  border-radius: .5em;
+  margin: 0 1em;
+  background: silver;
+  border: 0em;
+}
+
+button:hover {
+  background: #616161;
+  color: white;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.left-container {
+  margin-right: 2em;
+  background: steelblue;
+  border-radius: 1em;
+  color: white;
+  padding: 1em;
+}
+
+.main-container {
+  display: flex;
+}
+
+.main-image {
+  width: 50em;
+  height: 50em;
+  border-radius: 1em;
 }
 </style>
