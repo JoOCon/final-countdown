@@ -1,4 +1,10 @@
-# final-countdown
+# Final Countdown
+
+## About
+This project was designed as a challenge to learn how to build a simple app with a JavaScript framework that I've never used. The framework used to create this application was Vue.js. The information displayed was gathered from the NASA api. The challenge was conducted over two days.
+
+## Sample Of Project
+![final-countdown](images/final-countdown.png)
 
 ## Project setup
 ```
@@ -10,11 +16,6 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
 ### Run your tests
 ```
 npm run test
@@ -24,6 +25,3 @@ npm run test
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
